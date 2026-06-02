@@ -3,7 +3,7 @@
   padding-bottom: 4rem;
 }
 
-/* ── Hero ── */
+/*  Hero  */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -120,7 +120,7 @@
   50%       { transform: translateY(6px); }
 }
 
-/* ── Grid ── */
+/*  Grid  */
 .poems-section {
   max-width: 1300px;
   margin: 0 auto;
@@ -137,7 +137,7 @@
   }
 }
 
-/* ── Poem Card ── */
+/*  Poem Card  */
 .poem-card {
   position: relative;
   border-radius: 16px;
@@ -282,7 +282,7 @@
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ── Footer ── */
+/*  Footer  */
 .home-footer {
   text-align: center;
   padding: 2rem;
