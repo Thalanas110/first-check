@@ -10,3 +10,5 @@ build/
 *.env.test
 *.env.production
 coverage/
+# Local Netlify folder
+.netlify
