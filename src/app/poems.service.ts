@@ -82,7 +82,7 @@ export class PoemsService {
     {
       id: 2,
       title: 'That One Night We Talked',
-      author: 'Anonymous',
+      author: 'Benedict Ellie A. Lowell | BSCS 3-A',
       excerpt: ['Sa gabing tahimik asin may kahiloman,', 'Nag-istoryahan kita na may kaluwasan;'],
       mood: 'Introspective',
       accentColor: '#4F7CAC',
@@ -141,7 +141,7 @@ export class PoemsService {
     {
       id: 3,
       title: 'An Tulay sa Kadikloman',
-      author: 'Anonymous',
+      author: 'Adriaan M. Dimate | BSCS 4-A',
       excerpt: ['Nag-abot an aldaw nin dakulang pagsubok,', 'An mga pultahan pinasara sa pagdali;'],
       mood: 'Hopeful',
       accentColor: '#6A1B9A',
