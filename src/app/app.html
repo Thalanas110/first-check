@@ -1,0 +1,20 @@
+<div class="app-shell">
+  <div class="bg-image"></div>
+  <div class="bg-overlay"></div>
+
+  <div class="particles-layer" aria-hidden="true">
+    @for (p of particles; track p.x) {
+      <span
+        class="particle"
+        [style.left.%]="p.x"
+        [style.font-size.px]="p.size"
+        [style.animation-delay.s]="p.delay"
+        [style.animation-duration.s]="p.duration"
+      >{{ p.symbol }}</span>
+    }
+  </div>
+
+  <div [@routeAnimations]="prepareRoute(outlet)" class="page-container">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+</div>

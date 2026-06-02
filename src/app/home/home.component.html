@@ -1,0 +1,78 @@
+<main class="home-page">
+  <header class="hero-section">
+    <div class="hero-content">
+      <p class="hero-eyebrow" @heroSub>My dear Madame,</p>
+      <h1 class="hero-title" @heroTitle>
+        <span class="title-line">Happy 1st</span>
+        <span class="title-line italic-line">Monthsary :DD</span>
+      </h1>
+      <div class="hero-divider" @heroDivider>
+        <span class="divider-ornament">❧</span>
+      </div>
+      <p class="hero-subtitle" @heroSub>
+        Ten verses drawn from the heart of the ocean,<br>
+        from sunsets that never quite end.
+      </p>
+    </div>
+    <div class="scroll-indicator" @heroSub>
+      <span class="scroll-text">Click a poem card to begin with.</span>
+      <span class="scroll-arrow">↓</span>
+    </div>
+  </header>
+
+  <section class="poems-section">
+    @if (home.showCards()) {
+      <div class="poems-grid" @cardList>
+        @for (poem of home.poems; track poem.id) {
+          <article
+            class="poem-card"
+            [class.is-hovered]="home.hoveredId() === poem.id"
+            [style.--accent]="poem.accentColor"
+            (mouseenter)="home.setHoveredPoem(poem.id)"
+            (mouseleave)="home.setHoveredPoem(null)"
+            (click)="home.navigateToPoem(poem.id)"
+            (keydown.enter)="home.navigateToPoem(poem.id)"
+            tabindex="0"
+            role="button"
+            [attr.aria-label]="'Read ' + poem.title"
+          >
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-header">
+                <span class="poem-number">{{ poem.id | number:'2.0-0' }}</span>
+                <span class="poem-mood" [style.color]="poem.accentColor">{{ poem.mood }}</span>
+              </div>
+
+              <div class="card-body">
+                <h2 class="poem-title">{{ poem.title }}</h2>
+                <div class="poem-divider">
+                  <span class="accent-line" [style.background]="poem.accentColor"></span>
+                </div>
+                <div class="poem-excerpt">
+                  @for (line of poem.excerpt; track $index) {
+                    <p class="excerpt-line">{{ line }}</p>
+                  }
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <span class="read-cta">
+                  <span class="cta-text">Read Poem</span>
+                  <span class="cta-arrow">→</span>
+                </span>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    }
+  </section>
+
+  <footer class="home-footer">
+    <p class="footer-text">
+      <span class="footer-ornament">❦</span>
+      With love and verse
+      <span class="footer-ornament">❦</span>
+    </p>
+  </footer>
+</main>

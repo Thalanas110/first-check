@@ -1,0 +1,64 @@
+@if (detail.poem(); as poem) {
+  <div class="detail-page" [style.--accent]="poem.accentColor">
+    <button class="back-btn" (click)="detail.goBack()" @headerIn aria-label="Back to all poems">
+      <span class="back-arrow">←</span>
+      <span class="back-label">All Poems</span>
+    </button>
+
+    <article class="poem-article">
+      <header class="poem-header" @headerIn>
+        <span class="poem-index">Poem {{ poem.id }} of 10</span>
+        <span class="poem-mood-badge" [style.background]="poem.accentColor + '28'" [style.color]="poem.accentColor">
+          {{ poem.mood }}
+        </span>
+        <h1 class="poem-title">{{ poem.title }}</h1>
+        <div class="title-divider">
+          <span class="divider-line" [style.background]="poem.accentColor"></span>
+          <span class="divider-ornament" [style.color]="poem.accentColor">❧</span>
+          <span class="divider-line" [style.background]="poem.accentColor"></span>
+        </div>
+        <p class="poem-author">— {{ poem.author }}</p>
+      </header>
+
+      <div class="poem-body" @linesIn>
+        @for (stanza of detail.stanzas(); track $index) {
+          <div class="stanza">
+            @for (line of stanza; track line) {
+              <p class="poem-line">{{ line }}</p>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="poem-footer" @headerIn>
+        <span class="footer-ornament">❦</span>
+      </div>
+    </article>
+
+    <nav class="poem-nav" @navIn>
+      <div class="nav-inner">
+        @if (detail.prevPoem(); as prevPoem) {
+          <button class="nav-btn nav-prev" (click)="detail.navigateTo(prevPoem)">
+            <span class="nav-direction">← Previous</span>
+            <span class="nav-title">{{ prevPoem.title }}</span>
+          </button>
+        } @else {
+          <div class="nav-empty"></div>
+        }
+
+        <button class="nav-home-btn" (click)="detail.goBack()">
+          <span>All Poems</span>
+        </button>
+
+        @if (detail.nextPoem(); as nextPoem) {
+          <button class="nav-btn nav-next" (click)="detail.navigateTo(nextPoem)">
+            <span class="nav-direction">Next →</span>
+            <span class="nav-title">{{ nextPoem.title }}</span>
+          </button>
+        } @else {
+          <div class="nav-empty"></div>
+        }
+      </div>
+    </nav>
+  </div>
+}
