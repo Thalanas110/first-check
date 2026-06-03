@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NG_CLI_ANALYTICS=false node ./scripts/start.js",
-    "build": "ng build --configuration production",
+    "build": "node ./scripts/generate-sitemap.js && ng build --configuration production",
     "typecheck": "tsc -p tsconfig.app.json --noEmit"
   },
   "dependencies": {

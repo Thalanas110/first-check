@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://annah-claire-1.netlify.app/sitemap.xml
