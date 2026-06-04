@@ -22,6 +22,7 @@ export class PoemDetailService {
   readonly prevPoem = computed(() => this.context()?.prev ?? null);
   readonly nextPoem = computed(() => this.context()?.next ?? null);
   readonly stanzas = computed(() => this.context()?.stanzas ?? []);
+  readonly totalPoems = computed(() => this.poemsService.getAllPoems().length);
 
   constructor() {
     effect(() => {
