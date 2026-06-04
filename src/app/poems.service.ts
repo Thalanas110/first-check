@@ -554,7 +554,7 @@ export class PoemsService {
     {
       id: 8,
       title: 'An Rason na Dai Nauubos',
-      author: 'Anonymous',
+      author: 'Adriaan M. Dimate | BSCS 4-A',
       excerpt: ['Kun haputon ako kun nano an rason,', 'Nano an pinaghalinan kan kahadeanon;'],
       mood: 'Introspective',
       accentColor: '#A0835C',
