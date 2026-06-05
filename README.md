@@ -1,18 +1,18 @@
-# Angular Motion Sandbox
+# Private Poetry Collection
 
-Private Angular prototype for testing animated page transitions, content-card interactions, and long-form layout behavior across desktop and mobile breakpoints.
+Private Angular web app for browsing a password-protected collection of long-form poems in a polished reading layout.
 
-## Status
+## Current State
 
-This repository is currently being used as an internal UI experiment. The present copy, imagery, and naming inside the app should be treated as temporary placeholder material used to tune spacing, typography, animation timing, and page flow.
+This project is no longer a generic UI sandbox. It currently ships as a private poetry experience with:
 
-## Focus Areas
+- a password-gated entry screen
+- a home page that presents a 12-poem collection
+- poem detail pages with previous and next navigation
+- curated English translation toggles for poems written in Bikolano
+- ambient motion, layered visuals, and responsive reading layouts
 
-- standalone Angular component patterns
-- route-based page transition timing
-- grid-to-detail interaction flows
-- layered backgrounds and ambient motion
-- responsive typography and reading layout polish
+English-only poems do not show translation controls.
 
 ## Stack
 
@@ -35,15 +35,14 @@ npm run typecheck
 npm run build
 ```
 
-## Project Notes
+## Project Structure
 
-- App source lives in `src/`
-- Shared static assets live in `public/`
-- The current content set is only being used for presentation calibration and does not represent final product direction
+- `src/app/` contains the application views, routes, and poem data
+- `public/` contains static assets and the generated sitemap
+- `scripts/` contains local development and build helper scripts
 
-## Roadmap
+## Notes
 
-- clean up component boundaries
-- refine motion choreography
-- improve content abstraction
-- finalize production-facing copy and structure
+- The poem collection currently includes both English and Bikolano entries.
+- Bikolano poems can include a manually written English translation shown behind a toggle on the detail page.
+- The app content is private in intent and is structured for a focused reading experience rather than public publishing workflows.
