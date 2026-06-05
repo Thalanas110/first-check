@@ -17,7 +17,9 @@ function poemBlock(source, id) {
 
   assert.notEqual(start, -1, `expected poem ${id} to exist`);
 
-  const nextStart = source.indexOf('\n    {\n      id:', start + marker.length);
+  const rest = source.slice(start + marker.length);
+  const nextMatch = rest.match(/\r?\n\s*\{\r?\n\s*id:\s*\d+,/);
+  const nextStart = nextMatch === null ? -1 : start + marker.length + nextMatch.index;
   return source.slice(start, nextStart === -1 ? undefined : nextStart);
 }
 
