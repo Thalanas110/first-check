@@ -30,6 +30,39 @@
         }
       </div>
 
+      @if (detail.hasTranslation()) {
+        <section class="translation-section" @headerIn>
+          <button
+            class="translation-toggle"
+            type="button"
+            (click)="detail.toggleTranslation()"
+            [attr.aria-expanded]="detail.isTranslationExpanded()"
+            aria-controls="poem-translation"
+          >
+            <span class="translation-toggle-label">
+              {{ detail.isTranslationExpanded() ? 'Hide English translation' : 'Show English translation' }}
+            </span>
+            <span class="translation-toggle-icon" [class.translation-toggle-icon--open]="detail.isTranslationExpanded()">
+              ↓
+            </span>
+          </button>
+
+          @if (detail.isTranslationExpanded()) {
+            <div class="translation-body" id="poem-translation">
+              <p class="translation-heading">English translation</p>
+
+              @for (stanza of detail.translationStanzas(); track $index) {
+                <div class="translation-stanza">
+                  @for (line of stanza; track line) {
+                    <p class="translation-line">{{ line }}</p>
+                  }
+                </div>
+              }
+            </div>
+          }
+        </section>
+      }
+
       <div class="poem-footer" @headerIn>
         <span class="footer-ornament">❦</span>
       </div>

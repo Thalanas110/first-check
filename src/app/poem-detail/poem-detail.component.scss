@@ -171,6 +171,82 @@
   }
 }
 
+.translation-section {
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.translation-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  color: rgba(255, 248, 238, 0.88);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+}
+
+.translation-toggle-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.translation-toggle-icon {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  transition: transform 0.25s ease;
+}
+
+.translation-toggle-icon--open {
+  transform: rotate(180deg);
+}
+
+.translation-body {
+  margin-top: 1rem;
+  padding: 1.25rem 1.25rem 0;
+}
+
+.translation-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 248, 238, 0.42);
+  margin-bottom: 1rem;
+}
+
+.translation-stanza {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.translation-stanza + .translation-stanza {
+  margin-top: 1.4rem;
+}
+
+.translation-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2.1vw, 1.14rem);
+  line-height: 1.75;
+  color: rgba(255, 248, 238, 0.72);
+  letter-spacing: 0.01em;
+}
+
 /*  Poem Footer  */
 .poem-footer {
   text-align: center;
